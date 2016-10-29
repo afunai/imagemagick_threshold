@@ -1,8 +1,8 @@
 require 'rmagick'
 
-LINES  = '70'
-WIDTH  = 24
-HEIGHT = 24
+LINES  = '60'
+WIDTH  = 28
+HEIGHT = 28
 
 img = Magick::ImageList.new("grade_#{LINES}lines.png").first
 
