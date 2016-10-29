@@ -10,8 +10,8 @@
 <!ATTLIST levels divisor CDATA #REQUIRED>
 ]>
 <thresholds>
-  <threshold map="h20x20a">
-    <description>Halftone 20x20 (angled)</description>
+  <threshold map="h85lines">
+    <description>Halftone 85 lines/inch (angled)</description>
     <levels width="20" height="20" divisor="219">
       218 215 171  65  29   7  12  54 154 196 217 213 170  64  28   5  11  53 152 195
       199 184 144  96  50  23  40  77 126 176 197 183 143  95  49  22  38  77 125 175
@@ -36,8 +36,8 @@
     </levels>
   </threshold>
 
-  <threshold map="h56x28a">
-    <description>Halftone 56x28 (angled)</description>
+  <threshold map="h60lines">
+    <description>Halftone 60 lines/inch (angled)</description>
     <levels width="56" height="28" divisor="409">
       278 262 234 219 209 193 166 143 160 186 203 211 226 254 278 260 234 217 208 191 165 143 158 184 201 211 227 255 278 262 234 219 209 193 166 143 160 186 203 211 226 254 278 260 234 217 208 191 165 143 158 184 201 211 227 255
       355 328 307 243 195 131 101  61  93 116 178 226 291 318 354 326 305 242 195 131 101  61  90 114 178 224 290 318 354 328 307 243 195 131 101  61  93 116 178 226 291 318 354 326 305 242 195 131 101  61  91 114 178 224 290 318
