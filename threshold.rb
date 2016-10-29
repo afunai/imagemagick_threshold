@@ -1,18 +1,22 @@
 require 'rmagick'
 
-img = Magick::ImageList.new('grade_60lines.png').first
+LINES  = '70'
+WIDTH  = 24
+HEIGHT = 24
+
+img = Magick::ImageList.new("grade_#{LINES}lines.png").first
 
 t = []
-56.times {|i| t[i] = []}
+WIDTH.times {|i| t[i] = []}
 
 level = 1
 
 600.times.each do |box|
   increment = false
-  28.times do |y|
-    56.times do |x|
-p '!!!!!!' if img.pixel_color(x, y + box * 28).to_color == 'white' && t[x][y]
-      if img.pixel_color(x, y + box * 28).to_color == 'black' && t[x][y].nil? then
+  HEIGHT.times do |y|
+    WIDTH.times do |x|
+      p '!!!!!!' if img.pixel_color(x, y + box * HEIGHT).to_color == 'white' && t[x][y]
+      if img.pixel_color(x, y + box * HEIGHT).to_color == 'black' && t[x][y].nil? then
         t[x][y] = level
         increment = true
       end
@@ -34,14 +38,14 @@ puts <<_EOS
 <!ATTLIST levels divisor CDATA #REQUIRED>
 ]>
 <thresholds>
-  <threshold map="h56x28a">
-    <description>Halftone 56x28 (angled)</description>
-    <levels width="56" height="28" divisor="#{level}">
+  <threshold map="h#{LINES}lines">
+    <description>Halftone #{LINES} lines/inch (angled)</description>
+    <levels width="#{WIDTH}" height="#{HEIGHT}" divisor="#{level}">
 _EOS
 
-28.times do |y|
+HEIGHT.times do |y|
   print '     '
-  56.times do |x|
+  WIDTH.times do |x|
     printf ' %3.3s', t[x][y].to_i
   end
   puts
