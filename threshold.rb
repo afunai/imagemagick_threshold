@@ -34,8 +34,8 @@ puts <<_EOS
 <!ATTLIST levels divisor CDATA #REQUIRED>
 ]>
 <thresholds>
-  <threshold map="h20x20o">
-    <description>Halftone 20x20 (orthogonal)</description>
+  <threshold map="h20x20a">
+    <description>Halftone 20x20 (angled)</description>
     <levels width="20" height="20" divisor="#{level}">
 _EOS
 
